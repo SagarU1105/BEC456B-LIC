@@ -1,39 +1,51 @@
-# BEC456B-LIC
-Lab component of linear integrated circuit
-Experiment 3: Current Mirror Circuit
-Theory
-Function of a Current Mirror Circuit
-A current mirror is an essential analog circuit block primarily used for precise current replication. The circuit ensures that the output current remains proportional to a reference current despite variations in voltage conditions or load resistance. In MOSFET-based implementations, PMOS transistors form the current mirror, while an NMOS transistor typically acts as a current source or sink.
 
-Working Principle
-- The reference current (I_ref) flows through the input PMOS transistor (M2), establishing a corresponding voltage across its drain-source terminals.
-- The second PMOS transistor (M3) mirrors this current due to its identical gate-source voltage, thereby ensuring that I_out ≈ I_ref.
-- The NMOS transistor (M1) serves as a current sink, providing a stable current path to maintain circuit operation.
-- By adjusting the width-to-length (W/L) ratio of the transistors, the current mirror ratio can be modified to control the output current precisely.
-Advantages of Current Mirrors
-Provides accurate copying of a reference current to one or more output branches.
-Useful for biasing analog circuits like amplifiers.
-Requires fewer components compared to resistor-based biasing.
-Allows multiple current outputs from a single reference source.
-Offers high output resistance, acting like an ideal current source.
-Properties of Current Mirrors
-Maintains stable output current once steady-state is reached.
-Accuracy depends on how well the transistors are matched in terms of size and layout.
-Requires a minimum voltage (compliance voltage) at the output to function correctly.
-Output current can be scaled by adjusting the W/L ratio of the transistors.
-Commonly used in many analog circuit blocks like differential amplifiers and op-amps.
-Can provide current gain when using different sizing ratios for input and output transistors.
-Classification based on type of moseft used in current mirror circits
-NMOS Currnet Mirror Circuir
 
-Uses: N-channel MOSFET
+## Theory of Current Mirror Circuits
 
-Faster operation due to high electron mobility. image
+A **current mirror** is a fundamental analog circuit configuration designed to replicate a reference current with high precision across one or more output branches, maintaining consistency despite variations in load resistance or supply voltage. In MOSFET-based implementations, PMOS transistors typically form the mirroring structure, while an NMOS transistor often serves as a current source or sink.
+
+### Operating Principle
+
+The current mirror operates as follows:
+
+1. A reference current, \( I_{\text{ref}} \), flows through the input PMOS transistor (M2), establishing a specific drain-source voltage.
+2. A second PMOS transistor (M3), configured with an identical gate-source voltage as M2, mirrors the reference current, resulting in an output current \( I_{\text{out}} \approx I_{\text{ref}} \).
+3. An NMOS transistor (M1) functions as a current sink, providing a stable current path to ensure proper circuit operation.
+4. The output current can be scaled by adjusting the width-to-length (\( W/L \)) ratio of the transistors, enabling precise control over the current mirror ratio.
+
+### Advantages
+
+- Accurate replication of the reference current across multiple outputs.
+- Effective for biasing analog circuits, such as amplifiers.
+- Minimal component count compared to resistor-based biasing methods.
+- Supports multiple current outputs from a single reference source.
+- Exhibits high output resistance, approximating an ideal current source.
+
+### Key Properties
+
+- **Stability**: Delivers a stable output current in steady-state conditions.
+- **Accuracy**: Dependent on precise matching of transistor parameters (e.g., size and layout).
+- **Compliance Voltage**: Requires a minimum output voltage to maintain proper operation.
+- **Scalability**: Output current can be adjusted via the \( W/L \) ratio of transistors.
+- **Applications**: Widely used in analog circuits, including differential amplifiers and operational amplifiers.
+- **Current Gain**: Achievable by varying the sizing ratios of input and output transistors.
+
+### Classification by MOSFET Type
+
+#### NMOS Current Mirror
+- **Transistor Type**: Utilizes N-channel MOSFETs.
+- **Characteristics**: Offers faster operation due to higher electron mobility, making it suitable for high-speed applications.
+
+---
+
+This formalized description provides a clear and precise overview of current mirror circuits. If further details, mathematical derivations, or circuit diagrams are required, please specify.
+
 
 PMOS current Mirror Circuit
 
 Uses: P-channel MOSFET
-image
+![image](https://github.com/user-attachments/assets/c7246035-9fec-4406-a907-941262e191a4)
+
 
 Significance in Amplifier Circuits
 In amplifier design, current mirrors are widely employed as active loads to improve gain and stability. Unlike resistive loads, current mirrors offer higher output resistance, leading to greater voltage gain and better linearity.
@@ -59,7 +71,8 @@ Current Source
 Voltage Supply
 Connecting Wires
 Circuit Diagram
-Screenshot 2025-04-03 234826
+
+![image](https://github.com/user-attachments/assets/78ee0995-5d03-4a5e-ac0e-9dceafe0d6a1)
 
 Explanation of Circuit Components:
 - Bias Voltages (V2 and V3) = 0.95V: Establish an appropriate operating point to ensure proper transistor functionality.
@@ -67,7 +80,8 @@ Explanation of Circuit Components:
 - Output Node (Vout1): The output voltage is measured from this terminal.
 - PMOS (M2, M3) and NMOS (M1): The PMOS transistors implement the current mirror, while NMOS acts as a current sink.
 - Current Source (I_ref): Ensures a stable reference current for mirroring.
-DC Analysis (For Mirror Ratio 1:1)
+
+- DC Analysis (For Mirror Ratio 1:1)
 Calculation of Reference Current:
 I
 t
@@ -96,9 +110,10 @@ t
 2
 =
 0.2778
-m
-A
-Screenshot 2025-04-03 234851
+
+mA
+
+![image](https://github.com/user-attachments/assets/8741fd30-70bf-4748-8c33-adb97b2d52e0)
 
 For W/L values:
 
@@ -114,13 +129,10 @@ Analysis by Varying L while Maintaining the Ratio
 | 1000   | 18.33  | 0.0002778 A    | 0.0002803 A    | 0.0002803 A    |
 Transient Analysis
 Obtained gain = 10.3737V/V
-Screenshot 2025-04-03 235357
 
-AC Analysis and Frequency Response
-Expected gain = 20 dB
-Obtained gain = 22.860 dB
+![image](https://github.com/user-attachments/assets/37a3fa9a-e599-4b75-97b4-72c56e9ad8d1)
 
-Screenshot 2025-04-03 235849
+![image](https://github.com/user-attachments/assets/5fa2a822-f4e1-45d2-bc1e-ec26415a8e73)
 
 DC Analysis (For Mirror Ratio 1:2)
 I
@@ -145,9 +157,10 @@ Obtained gain: 12.1326V/V
 
 Obtained gain (dB): 24.306 dB
 
-Screenshot 2025-04-04 002616 Screenshot 2025-04-04 002719
 
-Inference:
+![image](https://github.com/user-attachments/assets/88bd975f-08e6-4fd6-99ce-c1cbe11f4592)
+
+![image](https://github.com/user-attachments/assets/b655d2f5-04ed-432d-a1d2-a67402fdc651)Inference:
 The current mirror accurately reproduces the reference current with minimal deviations.
 Altering the W/L ratio proportionally maintains a nearly constant drain current, demonstrating the robustness of the mirror circuit.
 Gain measurements slightly exceed theoretical predictions, likely due to parasitic effects or transistor mismatches.
@@ -167,21 +180,17 @@ M4: 50μm / 180nm
 M5: 105.12μm / 180nm
 M6: 105.12μm / 180nm
 DC Analysis and Biasing
-Ensuring the MOSFETs operate in the saturation region while matching expected results. Screenshot 2025-04-04 004350
+Ensuring the MOSFETs operate in the saturation region while matching expected results.
 
-Screenshot 2025-04-04 004456
+![image](https://github.com/user-attachments/assets/51703784-699e-4d26-9d14-bf77b3e7979f)
 
-Transient Analysis:
-image
+![image](https://github.com/user-attachments/assets/4c6e1f6c-7b2c-43d7-8777-d87269aa94e2)
 
-AC Analysis and Frequency Response:
-image
+![image](https://github.com/user-attachments/assets/ee2e833d-3a17-44b6-b1d1-7fef2dc93de8)
 
-Gain=34.12db
-3db Bandwidth=389.79Mhz
+![image](https://github.com/user-attachments/assets/d6a1f61a-1a0d-4a4b-88f1-ecf3fc037ff4)
+**Inference Analysis**
 
-Inference:
-The amplifier will work on high operating frequency due to obtained high bandwidth
-The gain discrepancy may stem from underestimated drain resistance or deviations in transconductance.
-The differential configuration provides excellent common-mode rejection and improved noise immunity.
-The obtained frequency response suggests that the amplifier is effective for signal amplification in RF and high-frequency analog circuits.
+The amplifier demonstrates suitability for high-frequency operation, attributed to its achieved high bandwidth. The observed gain discrepancy may arise from an underestimated drain resistance or variations in transconductance. Employing a differential configuration enhances common-mode rejection and bolsters noise immunity. The frequency response indicates that the amplifier is well-suited for effective signal amplification in radio frequency (RF) and high-frequency analog circuits.
+
+
